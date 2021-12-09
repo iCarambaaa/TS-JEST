@@ -1,5 +1,8 @@
 import { app } from './app'
 import mongoose from "mongoose"
+const dotenv = require("dotenv"); // to be able to use the dotenv
+
+dotenv.config();
 
 const port = process.env.PORT || 3030;
 
