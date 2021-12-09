@@ -23,7 +23,7 @@ describe("Testing the app endpoints", () => {
     beforeAll(done => {
         console.log("This gets run before all tests in this suite")
 
-        mongoose.connect(process.env.MONGO_URL_TEST).then(() => {
+        mongoose.connect(process.env.MONGO_URL_TEST!).then(() => {
             console.log("Connected to the test database")
             done()
         })
@@ -43,7 +43,7 @@ describe("Testing the app endpoints", () => {
         price: 200,
     }
 
-    let _id = null;
+    let _id:any = null;
 
     it("should check that the POST /products endpoint creates a new product", async () => {
         const response = await request.post("/products").send(validProduct)
