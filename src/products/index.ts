@@ -1,4 +1,5 @@
 import express from "express"
+import { GetProductsResponse, IProduct } from "../interfaces"
 import { ProductModel } from "./model"
 
 const productsRouter = express.Router()
@@ -6,7 +7,9 @@ const productsRouter = express.Router()
 productsRouter
     .get('/', async (req, res) => {
         const products = await ProductModel.find({})
-        res.send(products)
+
+        const response: GetProductsResponse = { products } // use interface here to insure type safety of request/response
+        res.send(response)
     })
     .get('/:id', async (req, res) => {
         const product = await ProductModel.findById(req.params.id)

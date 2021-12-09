@@ -43,7 +43,7 @@ describe("Testing the app endpoints", () => {
         price: 200,
     }
 
-    let _id:any = null;
+    let _id:string | null= null;
 
     it("should check that the POST /products endpoint creates a new product", async () => {
         const response = await request.post("/products").send(validProduct)
