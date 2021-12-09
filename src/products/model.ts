@@ -1,4 +1,5 @@
 import { ProductSchema } from "./schema";
 import mongoose from "mongoose"
+import { IProduct } from "../interfaces"
 
-export const ProductModel = mongoose.model("products", ProductSchema);
+export const ProductModel = mongoose.model<IProduct>("products", ProductSchema);
