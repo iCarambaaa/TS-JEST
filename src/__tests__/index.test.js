@@ -1,5 +1,5 @@
 
-import { app } from '../app.js';
+import { app } from '../app';
 import supertest from "supertest"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
